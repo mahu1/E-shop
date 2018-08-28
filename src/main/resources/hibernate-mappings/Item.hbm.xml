@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="matti.eshop.model" default-access="field">
+  <class name="Item" table="items">
+    <id name="itemId" column="item_id">
+      <generator class="sequence">
+        <param name="sequence">item_sequence</param>
+      </generator>
+    </id>
+    <property name="title" column="title" not-null="true" length="100"/>
+    <property name="description" column="description" not-null="true" length="1500"/>
+    <property name="price" column="price" not-null="true" length="9" precision="9" scale="2"/>
+    <property name="createTime" column="create_time" type="dateTime" not-null="true"/>
+    <property name="endTime" column="end_time" type="dateTime" not-null="true"/>
+    <many-to-one name="seller" column="user_id" not-null="false" />
+    <many-to-one name="location" column="location_id" not-null="false"/>
+    <many-to-one name="department" column="department_id" not-null="false"/>
+    <one-to-one name="order" class="Order" property-ref="item"/>
+    
+<!--    <one-to-one name="seller" class="Order" property-ref="seller"/>-->
+  </class>
+</hibernate-mapping>

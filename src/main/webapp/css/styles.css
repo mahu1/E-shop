@@ -1,0 +1,177 @@
+body {
+	background-image: url(../images/tausta2.gif);
+	background-repeat: repeat-x;
+	    background-color: #3F05B6;
+    background-color: #2F5400;
+}
+
+div.page {
+	padding: 5px;
+	width: 1000px;
+	border: 2px solid #000000;
+	background: #FAFEF1;
+    margin-left: 70px;
+    min-height: 520px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+table.login {
+	border: 2px solid #044476;
+	width: 22%;
+	text-align: left;
+	background: #FFFFFF;
+}
+table.normal {
+	border: 1px solid #044476;
+	width: 50%;
+	text-align: left;
+	background: #F9F8F8;
+}
+table.user {
+	border: 1px solid #044476;
+	width: 50%;
+	text-align: left;
+	background: #FFFFFF;
+}
+
+table.items {
+	border: 1px solid #000000;
+	width: 70%;
+	text-align: left;
+	background: White;
+}
+
+table.item {
+	border: 1px solid #044476;
+	width: 60%;
+	text-align: left;
+	background: #FFFFFF;
+}
+th {
+	text-align: left;
+}
+
+table.userInformation {
+	border: 1px solid #000000;
+	width: 30%;
+	text-align: left;
+	background: #FFFFFF;
+
+}
+
+caption {
+	background-color: #C0CBE7;
+	font-size: 20px;
+	border: 1px solid #000000;
+}
+
+hr {
+	width: 95%;
+	text-align: center;
+}
+
+.width {
+	width: 27%;
+}
+
+th.items {
+	width: 50%;
+}
+
+p.feedback {
+	border: 1px solid #000000;
+	background: #FFFBC6;
+	color: Black;	
+	width: 30%;
+}
+table.top {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.titles {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.userName {
+	text-align: right;
+	font-size: 12px;
+	font-weight: bold;
+	width: 30%;
+}
+#nameTitle {
+	font-family: "Comic Sans MS", "Arial Black";
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	width: 85%;
+	padding-left: 90px;
+}
+
+tr.headerLinks {
+	background: #FFEEAA;
+	font-size: 20px;
+}
+
+.sold {
+	background: #F9F8F8;
+}
+.unsold {
+	background: #F4F4F4;
+}
+
+.errors {
+	border: 1px solid Black;
+	display: block;
+	width: 400px;
+	color: Red;
+}
+.searchLink {
+	font-size: 13px;
+}
+.search {
+	padding: 5px;
+	text-align: center;
+}
+caption.times {
+	font-size: 14px;
+}
+
+a.headLinks {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: Black;
+	width: 200px;
+}
+a.headLinks:visited {
+	color: Black;
+}
+
+a:visited {
+	color: #0066CC;
+}
+a.headLinks:hover {
+	color: #FF9900;
+}
+
+
+table tr.odd {
+	background-color: #F4F4F4;
+}
+
+table.departments {
+	border: 1px solid #000000;
+	width: 80%;
+	background-color: #FFFFFF;
+
+}
+
+.content {
+	margin-left: 200px;
+}
+

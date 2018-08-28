@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location" value="classpath:application.properties"/>
+  </bean>
+  
+  <bean id="userService" class="matti.eshop.service.UserServiceImpl">
+    <property name="userDao" ref="userDao"/>
+    <property name="sessionService" ref="sessionService"/>
+  </bean>
+  
+  <bean id="itemService" class="matti.eshop.service.ItemServiceImpl">
+    <property name="itemDao" ref="itemDao"/>
+    <property name="userDao" ref="userDao"/>
+    <property name="locationDao" ref="locationDao"/>
+    <property name="departmentDao" ref="departmentDao"/>
+    <property name="sessionService" ref="sessionService"/>
+  </bean>
+  
+  <bean id="userDao" class="matti.eshop.dao.hibernate.HibernateUserDao">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="itemDao" class="matti.eshop.dao.hibernate.HibernateItemDao">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="locationDao" class="matti.eshop.dao.hibernate.HibernateLocationDao">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="departmentDao" class="matti.eshop.dao.hibernate.HibernateDepartmentDao">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="orderDao" class="matti.eshop.dao.hibernate.HibernateOrderDao">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="locationService" class="matti.eshop.service.LocationServiceImpl">
+    <property name="locationDao" ref="locationDao"/>
+  </bean>
+  
+  <bean id="departmentService" class="matti.eshop.service.DepartmentServiceImpl">
+    <property name="departmentDao" ref="departmentDao"/>
+  </bean>
+  
+  <bean id="orderService" class="matti.eshop.service.OrderServiceImpl">
+    <property name="itemDao" ref="itemDao"/>
+    <property name="userDao" ref="userDao"/>
+    <property name="orderDao" ref="orderDao"/>
+    <property name="sessionService" ref="sessionService"/>
+  </bean>
+  
+  <bean id="sessionService" class="matti.eshop.service.SessionServiceImpl">
+  </bean>
+  
+</beans>

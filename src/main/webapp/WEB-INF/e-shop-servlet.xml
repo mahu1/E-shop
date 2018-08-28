@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+  </bean>
+
+  <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/jsp/"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>
+  
+<!--   <bean name="/main.action" class="matti.eshop.controller.QuickSearchController">-->
+<!--     <property name="itemService" ref="itemService"/>-->
+<!--  </bean>-->
+
+  <bean name="/quick-search.action" class="matti.eshop.controller.QuickSearchController">
+    <property name="itemService" ref="itemService"/>
+    <property name="departmentService" ref="departmentService"/>
+  </bean>
+  
+  <bean name="/browse-departments.action" class="matti.eshop.controller.BrowseDepartmentsController">
+    <property name="itemService" ref="itemService"/>
+  </bean>
+  
+  <bean name="/user-information.action" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <property name="viewName" value="user-information"/>
+  </bean>
+  
+  <bean name="/register-user.action" class="matti.eshop.controller.RegisterUserController">
+    <property name="userService" ref="userService"/>
+  </bean>
+  
+  <bean name="/add-item.action" class="matti.eshop.controller.AddItemController">
+    <property name="itemService" ref="itemService"/>
+    <property name="locationService" ref="locationService"/>
+    <property name="departmentService" ref="departmentService"/>
+  </bean>
+  
+  <bean name="/search-items.action" class="matti.eshop.controller.SearchItemsController">
+    <property name="itemService" ref="itemService"/>
+    <property name="locationService" ref="locationService"/>
+    <property name="departmentService" ref="departmentService"/>
+  </bean>
+
+  <bean name="/edit-user.action" class="matti.eshop.controller.EditUserController">
+    <property name="userService" ref="userService"/>
+  </bean>
+  
+  <bean name="/view-seller.action" class="matti.eshop.controller.ViewSellerController">
+    <property name="userService" ref="userService"/>
+  </bean>
+  
+  <bean name="/view-buyer.action" class="matti.eshop.controller.ViewBuyerController">
+    <property name="userService" ref="userService"/>
+  </bean>
+  
+  <bean name="/view-sold-item.action" class="matti.eshop.controller.ViewItemController">
+    <property name="itemService" ref="itemService"/>
+    <property name="orderService" ref="orderService"/>
+  </bean>
+  
+  <bean name="/view-unsold-item.action" class="matti.eshop.controller.ViewItemController">
+    <property name="itemService" ref="itemService"/>
+    <property name="orderService" ref="orderService"/>
+  </bean>
+  
+  <bean name="/edit-item.action" class="matti.eshop.controller.EditItemController">
+    <property name="itemService" ref="itemService"/>
+    <property name="locationService" ref="locationService"/>
+    <property name="departmentService" ref="departmentService"/>
+  </bean>
+  
+  <bean name="/view-open-items.action" class="matti.eshop.controller.ViewUsersOpenItemsController">
+    <property name="itemService" ref="itemService"/>
+  </bean>
+  
+  <bean name="/view-orders.action" class="matti.eshop.controller.ViewUsersOrdersController">
+    <property name="orderService" ref="orderService"/>
+  </bean>
+  
+  <bean name="/view-sold-items.action" class="matti.eshop.controller.ViewUsersSoldItemsController">
+    <property name="orderService" ref="orderService"/>
+  </bean>
+  
+  <bean name="/view-unsold-items.action" class="matti.eshop.controller.ViewUsersUnsoldItemsController">
+    <property name="itemService" ref="itemService"/>
+  </bean>
+  
+  <bean name="/remove-item.action" class="matti.eshop.controller.RemoveItemController">
+    <property name="itemService" ref="itemService"/>
+  </bean>
+
+  <bean name="/login.action" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <property name="viewName" value="login"/>
+  </bean>
+  
+</beans>

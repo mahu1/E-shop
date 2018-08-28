@@ -1,0 +1,40 @@
+body {
+    margin-left: 35%;
+}
+table.login {
+	border: 2px solid Black;
+	width: 22%;
+	text-align: left;
+	background: #F9F8F8;
+}
+
+table.register {
+	border: 1px solid #000000;
+	width: 45%;
+	text-align: left;
+	background: #F9F8F8;
+}
+th {
+	text-align: left;
+}
+
+
+
+.errors {
+	border: 1px solid Black;
+	display: block;
+	width: 400px;
+	color: Red;
+
+}
+
+p.feedback {
+	border: 1px solid #000000;
+	background: #FFFBC6;
+	color: Black;	
+	width: 35%;
+}
+
+a:visited {
+	color: #0066CC;
+}
